@@ -18,7 +18,7 @@ export const ContextProvider = ({children}) => {
     const connectWallet  = async() => {
         try {
             if(!ethereum) return alert('plz install metamask')
-            const accounts = await ethereum.request({ method: 'eth_accounts' })
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
             setAddress(accounts[0]?.toLowerCase())
             return true
         } catch (error) {
